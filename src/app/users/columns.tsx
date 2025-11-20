@@ -4,6 +4,26 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Eye } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+// A valid React Component (uppercase name) to encapsulate the Hook usage
+const ViewUserButton = ({ userId }: { userId: string }) => {
+    //This is now a legal call inside a React component.
+    const router = useRouter();
+
+    const handleViewUser = () => {
+        
+        router.push(`/users/${userId}`); 
+    }
+
+    return (
+      <Button  
+          onClick={handleViewUser}
+          variant="outline"
+      >
+          <Eye className="h-4 w-4" />
+      </Button>
+    )
+}
+
 // This type is used to define the shape of our data.
 export type User = {
     id: string;
@@ -41,23 +61,30 @@ export const columns: ColumnDef<User>[] = [
   {
     id: "actions",
     cell: ({row}) => {
-        const user = row.original;
-        const userId = user.id;
-        const router = useRouter();
+      const user = row.original;
 
-        const handleViewUser = () => {
-            router.push(`/users/${userId}`);
-        }
-        return(
-            <Button  
-                onClick={handleViewUser}
-                variant="outline"
-            >
-                <Eye className="h-4 w-4" />
-            </Button>
+        // Pass the necessary data (userId) to the component.
+        // NO HOOKS ARE CALLED HERE.
+      return <ViewUserButton userId={user.id} />;
+      }
+    // cell: ({row}) => {
+    //     const user = row.original;
+    //     const userId = user.id;
+    //     const router = useRouter();
 
-        )
-    }
+    //     const handleViewUser = () => {
+    //         router.push(`/users/${userId}`);
+    //     }
+    //     return(
+    //         <Button  
+    //             onClick={handleViewUser}
+    //             variant="outline"
+    //         >
+    //             <Eye className="h-4 w-4" />
+    //         </Button>
+
+    //     )
+    // }
   }
 
 

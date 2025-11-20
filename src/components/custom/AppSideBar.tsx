@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Home, Inbox, Calendar,Search, Settings, User2, ChevronUp, Plus, Projector, ChevronDown, CircleDollarSign, Users2, ChartPie, Rocket, SquareCode} from "lucide-react";
+import { Home, Inbox, Calendar,Search, Settings, User2, ChevronUp, Plus, Projector, CircleDollarSign, Users2, Rocket, SquareCode} from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -13,14 +12,13 @@ import {
   SidebarMenuItem,
   SidebarHeader,
   SidebarSeparator,
-  SidebarGroupAction,
   SidebarMenuBadge,
   SidebarMenuSub,
   SidebarMenuSubItem,
   SidebarMenuSubButton,
 } from "@/components/ui/sidebar";
 import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuContent } from "../ui/dropdown-menu";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
+// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
 import { Badge } from "../ui/badge";
 
 const items =[
