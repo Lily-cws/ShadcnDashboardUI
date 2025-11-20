@@ -75,7 +75,7 @@ const AppSideBar = () =>{
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link href="/">
-                            <span className="text-3xl font-semibold">Shadcn ui</span>
+                            <span className="text-3xl font-semibold">Dashboard</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
